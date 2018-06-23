@@ -1,0 +1,48 @@
+<style type="text/css">
+<!--
+.tab { margin-left: 40px; }
+-->
+</style>
+<!DOCTYPE html>
+<html>
+<body>
+<h1><font color = "blue">CSC 471 Final Project</font></h1>
+<h3> by Amy Valukonis </h3>
+<h2>Solar System Simulation</h2>
+<img src = "day.jpg" width = "400" height = "300"> 
+<img src = "night.jpg" width = "400" height = "300"> 
+<p></p>
+<h3>The Idea </h3>
+<p>The inspiration for my final project came from an interest in learning more about texture mapping and how that technique can be utilized to produce pretty much any real-life seen you want. Initially, I was overzealous in what I wanted to accomplish with this project; I was very close to implementing bloom on my planets in addition to a day/night cycle that was to be achieved through a blending of two different cube map textures. However, with limited time constraints, I decided to forgo that route altogether and instead took a more simplistic approach. </p>
+<h3> Technologies Used </h3> 
+<p> What I did manage to accomplish with my project despite my shortcomings includes multiple different technologies that were learned throughout the course of this quarter in addition to a new technology that I figured would be interesting to explore.  </p>
+<ul>
+<li><h3> <bold> Skybox </bold></h3></li>
+<ul> <li> <p> A skybox sets the scene in a solar system </p></li><li><p>A skybox renders a 3D cube that the camera is wrapped around in, by extracting 2D images of the faces of the cube and placing those images around the scene</p></li></ul><li><h3><bold> Camera Control </bold></h3></li> 
+<ul> <li> <p> The camera is fixed on the floor of the solar system and allows the user to navigate the scene using the standard WASD keys and the mouse pointer. </p></li> <li> <p> The user can also control the motion of a dog that is rendered on the scene to allow it to explore the surroundings of its environment </p></li></ul> 
+<li><h3> Blinn-Phong Lighting </h3></li>
+<ul><li><p> This shading technique uses the fragment shader to effectively calculate the appropriate color for each fragment of an object </p></li>
+<li><p> This technique was employed on the planetary objects of the solar system by specifying a directional light source in addition to ambient and diffuse coefficients in order to accurately model real-world light reflections</p></li></ul> 
+<li><h3> Other lighting effects </h3></li> 
+<ul><li><p> To give a kind of ominous-feel to the scene, I made an attempt at rendering the closest thing to a fog-like effect that I could </p></li> 
+<li><p> By specifying an upper and lower bound for the fog effect, I calculated the difference of the lower bound from each of the texture coordinates y-positions and applied a blending of the fog color and the textured sample color </p></li></ul>
+</ul>
+<h3> Key Controls </h3> 
+<ul><li><p> W: Move forward in scene </p></li>
+<li><p> S: Move backward in scene </p></li> 
+<li><p> D: Move right in scene </p></li> 
+<li><p> A: Move left in scene </p></li>
+<li><p> I: Move dog forward in scene </p></li>
+<li><p> K: Move dog backward in scene </p></li> 
+<li><p> L: Move dog right in scene </p></li> 
+<li><p> J: Move dog left in scene </p></li>
+<li><p> M: Toggle between two different scenes: night and day </p></li>
+<li><p> Use the mouse to control rotation around the scene </p></li></ul>
+<h3> Problems Encountered </h3> 
+<p> I definitely encountered my fair share of issues in developing my project. The first issue I was faced with was properly setting up my skybox. My initial attempt at rendering the skybox resulted in an upside down scene and faces that didn't match up properly. I couldn't come up with a clever way to resolve the issue, so I ultimately ended up editing the images themselves via rotations and flips until I got the result I wanted. Other issues came about when I was trying to implement bloom shading; making sure that the appropriate texture buffers were being rendered to in specific stages of the shading pipeline was very difficult for me to debug and understand hence my decision to forgo that technology altogether </p>
+<h3> Resources </h3> 
+<a href = "http://antongerdelan.net/opengl/cubemaps.html"> http://antongerdelan.net/opengl/cubemaps.html </a> <p></p>
+<a href = "https://www.youtube.com/watch?v=rqx9IDLKV28"> https://www.youtube.com/watch?v=rqx9IDLKV28 </a> <p></p>
+<a href = "https://learnopengl.com/Advanced-OpenGL/Cubemaps"> https://learnopengl.com/Advanced-OpenGL/Cubemaps </a> <p></p>
+<a href = https://learnopengl.com/Advanced-Lighting/Bloom"> https://learnopengl.com/Advanced-Lighting/Bloom </a>
+</html>
